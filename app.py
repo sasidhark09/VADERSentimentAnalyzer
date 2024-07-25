@@ -5,7 +5,7 @@ nltk.download('vador_lexicon')
 app=Flask(__name__)
 application=app
 
-@app.route('/',methods=["GET","POST"])
+@app.route('/',method=["GET","POST"])
 def main():
     if request.method=="POST":
         inp=request.form.get("inp")
@@ -15,7 +15,8 @@ def main():
             return render_template('home.html',message="Negative🙁")
         else:
             return render_template('home.html',message="Positive😊")
-    return render_template('home.html')
+    else:
+        return render_template('home.html')
 
 
 

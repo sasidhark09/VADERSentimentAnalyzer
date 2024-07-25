@@ -5,7 +5,7 @@ nltk.download('vador_lexicon')
 app=Flask(__name__)
 application=app
 
-@app.route('/',method=["GET","POST"])
+@app.route('/',methods=["GET","POST"])
 def main():
     if request.method=="POST":
         inp=request.form.get("inp")
